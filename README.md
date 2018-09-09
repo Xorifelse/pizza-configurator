@@ -1,3 +1,5 @@
+# [Deployed](https://new-age-pizza.herokuapp.com/)
+
 # Pizza Configurator Homework
 
 _Note: we'll use the results of this homework assignment for a formal evaluation and as such you should write the code individually. Plagiarism is a violation of the Academy contract and makes nobody happy._
