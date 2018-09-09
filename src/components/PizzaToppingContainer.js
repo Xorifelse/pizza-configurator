@@ -13,7 +13,7 @@ class PizzaToppingContainer extends React.PureComponent {
 
   componentDidMount(){
     // Simulate db request.
-    if(this.props.pizza.toppingVariants.length == 0){
+    if(this.props.pizza.toppingVariants.length === 0){
       this.props.fetchToppings()
     }
 
@@ -43,8 +43,8 @@ class PizzaToppingContainer extends React.PureComponent {
     c.length = this.props.pizza.toppingVariants.length
     c[i] = event.target.checked
 
-    if(c.filter(v => v).length == 3){
-      c.map((v, k) => {
+    if(c.filter(v => v).length === 3){
+      c.forEach((v, k) => {
         d[k] = !v
       })
     } else {

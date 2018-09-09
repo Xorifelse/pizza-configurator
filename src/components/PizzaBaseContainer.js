@@ -11,7 +11,7 @@ class PizzaBaseContainer extends React.PureComponent {
 
   componentDidMount(){
     // Simulate db request.
-    if(this.props.store.pizza.baseVariants.length == 0){
+    if(this.props.store.pizza.baseVariants.length === 0){
       this.props.fetchBases()
     }
 

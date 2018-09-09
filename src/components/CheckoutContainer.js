@@ -3,8 +3,7 @@ import {connect} from 'react-redux'
 
 import Checkout from './Checkout'
 import {removeFromCart} from '../actions/cart'
-
-import {getPricePizza, formatCurrency} from '../lib/prices'
+import {getPricePizza} from '../lib/prices'
 
 class CheckoutContainer extends React.PureComponent {
   state = {
@@ -23,7 +22,7 @@ class CheckoutContainer extends React.PureComponent {
         base:  pizza.baseVariants[pizza.base],
         sauce: pizza.sauceMix ? pizza.sauceVariants.join(', ') : pizza.sauceVariants[pizza.sauce],
         toppings: pizza.topping.checked.reduce((acc, curr, i) => curr ? acc.concat(pizza.toppingVariants[i]) : acc, [] ).join(', '),
-        price: formatCurrency(getPricePizza(pizza))
+        price: getPricePizza(pizza)
       }
     })
 
@@ -43,7 +42,7 @@ class CheckoutContainer extends React.PureComponent {
 
     this.setState({
       drone: checked,
-      total: formatCurrency(price)
+      total: price
     })
   }
 

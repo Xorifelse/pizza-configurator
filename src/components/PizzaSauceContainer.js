@@ -12,7 +12,7 @@ class PizzaSauceContainer extends React.PureComponent {
 
   componentDidMount(){
     // Simulate db request.
-    if(this.props.store.pizza.sauceVariants.length == 0){
+    if(this.props.store.pizza.sauceVariants.length === 0){
       this.props.fetchSauces()
     }
 

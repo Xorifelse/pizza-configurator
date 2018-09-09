@@ -28,7 +28,8 @@ class HomeContainer extends React.Component{
       total = getPricePizza(this.props.pizza)
     } else {
       this.props.cart.items.map(pizza => {
-        total += getPricePizza(pizza)
+        return total += getPricePizza(pizza)
+        
       })
     }
 
@@ -40,7 +41,7 @@ class HomeContainer extends React.Component{
   }
 
   componentDidUpdate(){
-    if(this.state.value != this.props.pizza.field){
+    if(this.state.value !== this.props.pizza.field){
       this.setState({ value: this.props.pizza.field })
     }
   }

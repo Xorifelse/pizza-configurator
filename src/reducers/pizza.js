@@ -8,7 +8,6 @@ import {
   SET_MIX,
   SET_TOPPING,
   FIELD_RESET,
-  FIELD_SET
 } from '../actions/pizza'
 
 const initialState = {

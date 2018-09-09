@@ -5,6 +5,8 @@ import {Paper, Table, TableHead, TableRow, TableBody, TableCell, Button, TableFo
 import DeleteIcon from '@material-ui/icons/Delete';
 import MoneyIcon from '@material-ui/icons/CreditCard';
 
+import {formatCurrency} from '../lib/prices'
+
 const CustomTableCell = withStyles(theme => ({
   head: {
     backgroundColor: theme.palette.common.black,
@@ -51,7 +53,7 @@ function Checkout({pizzas, onDelete, onDroneDelivery, drone, total}){
                 <CustomTableCell>{pizza.base}</CustomTableCell>
                 <CustomTableCell>{pizza.sauce}</CustomTableCell>
                 <CustomTableCell>{pizza.toppings}</CustomTableCell>
-                <CustomTableCell numeric>&euro; {pizza.price}</CustomTableCell>
+                <CustomTableCell numeric>&euro; {formatCurrency(pizza.price)}</CustomTableCell>
                 <CustomTableCell>
                   <Button variant="fab" color="secondary" aria-label="Delete" className={styles.button} onClick={() => onDelete(index)}><DeleteIcon /></Button>
                 </CustomTableCell>
@@ -65,8 +67,8 @@ function Checkout({pizzas, onDelete, onDroneDelivery, drone, total}){
             <TableCell></TableCell>
             <TableCell></TableCell>
             <TableCell><FormControlLabel control={<Checkbox checked={drone} onClick={onDroneDelivery} value="drone" />} label="Drone Delivery? (+10%)"/></TableCell>
-            <TableCell numeric>&euro; {total}</TableCell>
-            <TableCell><Button variant="fab" color="primary" aria-label="Pay" onClick={() => alert(`Money to pay: ${total}`)} className={styles.button}><MoneyIcon /></Button></TableCell>
+            <TableCell numeric>&euro; {formatCurrency(total)}</TableCell>
+            <TableCell><Button variant="fab" color="primary" aria-label="Pay" onClick={() => alert(`Money to pay: ${formatCurrency(total)}`)} className={styles.button}><MoneyIcon /></Button></TableCell>
           </TableRow>
         </TableFooter>
       </Table>
