@@ -12,7 +12,7 @@ class CheckoutContainer extends React.PureComponent {
   }
 
   getTotal(){
-    return this.props.cart.items.reduce((acc, curr) => acc + getPricePizza(curr), 0).toFixed(2)
+    return this.props.cart.items.map(pizza => getPricePizza(pizza)).reduce((a, b) => a + b, 0)
   }
 
   componentDidMount(){
