@@ -27,9 +27,8 @@ class HomeContainer extends React.Component{
     if(current){
       total = getPricePizza(this.props.pizza)
     } else {
-      this.props.cart.items.map(pizza => {
-        return total += getPricePizza(pizza)
-        
+      this.props.cart.items.forEach(pizza => {
+        total += getPricePizza(pizza)
       })
     }
 
